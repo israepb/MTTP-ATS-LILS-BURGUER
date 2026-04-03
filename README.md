@@ -51,4 +51,3 @@ Algunas clases con múltiples responsabilidades
 
 ## 📂 Estructura del Proyecto
 * `/src`: Código fuente organizado por paquetes.
-* `/docs`: Documentación y diagramas de clases.
