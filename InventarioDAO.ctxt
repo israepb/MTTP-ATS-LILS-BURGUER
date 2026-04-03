@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=InventarioDAO
+comment1.params=
+comment1.target=java.util.List\ listarTodos()
+comment2.params=id
+comment2.target=Ingrediente\ buscar(java.lang.String)
+comment3.params=ing
+comment3.target=void\ guardar(Ingrediente)
+comment4.params=
+comment4.target=java.lang.String\ siguienteId()
+comment5.params=
+comment5.target=java.util.Map\ leerMinimos()
+numComments=6

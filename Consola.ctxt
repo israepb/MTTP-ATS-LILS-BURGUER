@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Consola
+comment1.params=
+comment1.target=Consola()
+comment2.params=etiqueta
+comment2.target=java.lang.String\ leerTexto(java.lang.String)
+comment3.params=etiqueta
+comment3.target=int\ leerEntero(java.lang.String)
+comment4.params=etiqueta
+comment4.target=double\ leerDecimal(java.lang.String)
+comment5.params=pregunta
+comment5.target=boolean\ confirmar(java.lang.String)
+comment6.params=
+comment6.target=void\ pausar()
+comment7.params=texto
+comment7.target=void\ titulo(java.lang.String)
+comment8.params=
+comment8.target=void\ linea()
+numComments=9

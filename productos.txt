@@ -1,0 +1,30 @@
+P001|Clasica|Carne, papas y ensalada|35.0|Hamburguesas|12|true
+P002|Royal|Carne, huevo y papas|40.0|Hamburguesas|14|true
+P003|Filete Burger|Pechuga de pollo y papas|40.0|Hamburguesas|14|true
+P004|Chile Burger|Carne, palta, tomate y papas|40.0|Hamburguesas|15|true
+P005|Chori Huevo|Chorizo parrillero y huevo|45.0|Hamburguesas|13|true
+P006|Burger a lo Pobre|Carne, huevo, platano y papas|48.0|Hamburguesas|16|true
+P007|Lomitoki Burger|Lomito salteado y papas|35.0|Hamburguesas|15|true
+P008|Bichota Burger|Doble carne, aros de cebolla y papas|48.0|Hamburguesas|18|true
+P009|Crispy Burger|Filete de pollo broaster y papas|35.0|Hamburguesas|14|true
+P010|Hawaiana Burger|Pechuga, queso, pina y papas|48.0|Hamburguesas|16|true
+P011|Hot Burger|Carne, chancho, tocino, huevo y papas|40.0|Hamburguesas|17|true
+P012|Lili Burger|Carne, huevo, chorizo, pollo y papas|45.0|Hamburguesas|18|true
+P013|Pizza Muzzarella|Salsa tomate, queso reggianito|40.0|Pizzas|20|true
+P014|Pizza Jamon|Salsa tomate, queso, jamon|45.0|Pizzas|22|true
+P015|Pizza Palmito|Salsa tomate, queso, palmito|45.0|Pizzas|22|true
+P016|Pizza Katupiry|Salsa tomate, queso crema, cheddar|45.0|Pizzas|22|true
+P017|Pizza Pepperoni|Salsa tomate, queso, pepperoni|45.0|Pizzas|22|true
+P018|Pizza Napolitana|Salsa tomate, queso, tomate, jamon|45.0|Pizzas|22|true
+P019|Coca-Cola 500ml|Gaseosa 500ml|8.0|Bebidas|1|true
+P020|Coca-Cola 2L|Gaseosa 2 litros|18.0|Bebidas|1|true
+P021|Fanta 500ml|Gaseosa 500ml|8.0|Bebidas|1|true
+P022|Sprite 500ml|Gaseosa 500ml|8.0|Bebidas|1|true
+P023|Jugo Tumbo 500ml|Jugo Del Valle|9.0|Bebidas|1|true
+P024|Jugo Manzana 1L|Jugo Del Valle|15.0|Bebidas|1|true
+P025|Huevo extra|Huevo frito|4.0|Extras|2|true
+P026|Platano frito|Platano frito|4.0|Extras|2|true
+P027|Queso extra|Queso adicional|4.0|Extras|1|true
+P028|Filete pollo ext|Filete de pollo|12.5|Extras|7|true
+P029|Carne extra|Carne adicional|15.0|Extras|7|true
+P030|Sprite|de limon|12.0|Bebidas|0|true

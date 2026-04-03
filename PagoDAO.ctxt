@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=PagoDAO
+comment1.params=
+comment1.target=java.util.List\ listarPagos()
+comment10.params=
+comment10.target=java.lang.String\ siguienteIdTicket()
+comment2.params=pago
+comment2.target=void\ guardarPago(Pago)
+comment3.params=
+comment3.target=double\ totalVentas()
+comment4.params=
+comment4.target=java.lang.String\ siguienteIdPago()
+comment5.params=
+comment5.target=java.util.List\ listarFacturas()
+comment6.params=f
+comment6.target=void\ guardarFactura(Factura)
+comment7.params=
+comment7.target=java.lang.String\ siguienteIdFactura()
+comment8.params=
+comment8.target=java.util.List\ listarTickets()
+comment9.params=t
+comment9.target=void\ guardarTicket(Ticket)
+numComments=11

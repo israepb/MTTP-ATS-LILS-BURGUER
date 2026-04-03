@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=UsuarioDAO
+comment1.params=
+comment1.target=java.util.List\ listarTodos()
+comment2.params=id
+comment2.target=Usuario\ buscar(java.lang.String)
+comment3.params=nombreUsuario
+comment3.target=Usuario\ buscarPorNombreUsuario(java.lang.String)
+comment4.params=nombreUsuario\ contrasena
+comment4.target=Usuario\ validarLogin(java.lang.String,\ java.lang.String)
+comment5.params=u
+comment5.target=void\ guardar(Usuario)
+comment6.params=
+comment6.target=java.lang.String\ siguienteId()
+comment7.params=rol
+comment7.target=int\ contarPorRol(java.lang.String)
+comment8.params=l
+comment8.target=Usuario\ desdeLinea(java.lang.String)
+comment9.params=u
+comment9.target=java.lang.String\ aLinea(Usuario)
+numComments=10

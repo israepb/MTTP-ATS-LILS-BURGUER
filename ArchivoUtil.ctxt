@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=ArchivoUtil
+comment1.params=archivo
+comment1.target=java.util.List\ leerLineas(java.lang.String)
+comment2.params=archivo\ lineas
+comment2.target=void\ escribirLineas(java.lang.String,\ java.util.List)
+comment3.params=archivo\ linea
+comment3.target=void\ agregarLinea(java.lang.String,\ java.lang.String)
+comment4.params=archivo
+comment4.target=boolean\ existe(java.lang.String)
+numComments=5

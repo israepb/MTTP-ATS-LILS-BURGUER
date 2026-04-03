@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=DatosDemostracion
+comment1.params=
+comment1.target=void\ cargar()
+comment10.params=idProducto\ recetaStr
+comment10.target=void\ receta(java.lang.String,\ java.lang.String)
+comment11.params=id\ n\ u\ s\ m
+comment11.target=void\ i(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ double)
+comment2.params=
+comment2.target=void\ cargarProductos()
+comment3.params=
+comment3.target=void\ cargarCombos()
+comment4.params=
+comment4.target=void\ cargarRecetas()
+comment5.params=
+comment5.target=void\ cargarEmpleados()
+comment6.params=
+comment6.target=void\ cargarIngredientes()
+comment7.params=
+comment7.target=void\ cargarProveedores()
+comment8.params=id\ n\ d\ pr\ c\ t
+comment8.target=void\ p(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ java.lang.String,\ int)
+comment9.params=id\ n\ d\ precioBase\ descuento\ ids\ tiempo
+comment9.target=void\ combo(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ double,\ java.lang.String,\ int)
+numComments=12

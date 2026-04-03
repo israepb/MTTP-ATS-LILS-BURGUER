@@ -1,0 +1,11 @@
+I001|Carne de res|kg|5.0
+I002|Pan hamburguesa|unid|40.0
+I003|Pechuga pollo|kg|3.0
+I004|Queso|kg|2.0
+I005|Tomate|kg|2.0
+I006|Lechuga|kg|1.5
+I007|Harina pizza|kg|4.0
+I008|Salsa de tomate|lt|3.0
+I009|Papas|kg|8.0
+I010|Huevo|unid|30.0
+I011|||1.0

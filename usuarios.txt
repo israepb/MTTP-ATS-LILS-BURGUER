@@ -1,0 +1,9 @@
+U001|Natalia|Mendoza|70011111|natalia|admin123|ADMIN|true
+U002|Alejandro|Vargas|70022222|alejandro|gerente123|GERENTE|true
+U003|Luis|Morales|70033333|luis|cajero123|CAJERO|true
+U004|Carlos|Ramirez|70044444|carlos|cocina123|COCINERO|true
+U005|pepe|gonzales|987654|PepeGonzales|1234|COCINERO|true
+U006|tito|Lara|9687474|titoLara|12314234|CAJERO|true
+U007|joel|Gonzales|8574983|JoelGonza|23411342|CLIENTE|true
+U008|ivan|gomez|8653|ivanGomez|1236547'|COCINERO|true
+U009|alan|perz|2542663|juan[pe|5426261621|COCINERO|true

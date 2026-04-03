@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Pago
+comment1.params=idPago\ monto\ idPedido
+comment1.target=Pago(java.lang.String,\ double,\ java.lang.String)
+comment2.params=
+comment2.target=void\ imprimirComprobante()
+comment3.params=
+comment3.target=java.lang.String\ getIdPago()
+comment4.params=
+comment4.target=double\ getMonto()
+comment5.params=
+comment5.target=java.lang.String\ getIdPedido()
+comment6.params=
+comment6.target=java.lang.String\ getFecha()
+comment7.params=f
+comment7.target=void\ setFecha(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MenuLogin
+comment1.params=
+comment1.target=void\ mostrar()
+comment2.params=
+comment2.target=void\ ingresarComoInvitado()
+comment3.params=
+comment3.target=Usuario\ pedirLogin()
+comment4.params=
+comment4.target=void\ registrarCliente()
+numComments=5

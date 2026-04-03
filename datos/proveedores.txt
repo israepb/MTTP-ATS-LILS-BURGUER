@@ -1,0 +1,4 @@
+PRV-1|Coca-Cola Bolivia|70099001|Av. Blanco Galindo|Bebidas
+PRV-2|Distribuidora Andina|70099002|Calle Comercio 123|Insumos
+PRV-3|Panaderia Central|70099003|Mercado Central|Panaderia
+PRV-4|Proeza|70099004|Av. America|Carnes

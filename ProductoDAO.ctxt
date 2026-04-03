@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=ProductoDAO
+comment1.params=
+comment1.target=java.util.List\ listarTodos()
+comment2.params=categoria
+comment2.target=java.util.List\ listarPorCategoria(java.lang.String)
+comment3.params=id
+comment3.target=Producto\ buscar(java.lang.String)
+comment4.params=prod
+comment4.target=void\ guardar(Producto)
+comment5.params=id
+comment5.target=void\ eliminar(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ siguienteId()
+comment7.params=l
+comment7.target=Producto\ desdeLinea(java.lang.String)
+comment8.params=p
+comment8.target=java.lang.String\ aLinea(Producto)
+numComments=9

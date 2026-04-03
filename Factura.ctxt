@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Factura
+comment1.params=idFactura\ nit\ razonSocial\ total\ idPedido
+comment1.target=Factura(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ java.lang.String)
+comment2.params=
+comment2.target=void\ imprimir()
+comment3.params=
+comment3.target=java.lang.String\ getIdFactura()
+comment4.params=
+comment4.target=java.lang.String\ getNit()
+comment5.params=
+comment5.target=java.lang.String\ getRazonSocial()
+comment6.params=
+comment6.target=double\ getTotal()
+comment7.params=
+comment7.target=java.lang.String\ getIdPedido()
+comment8.params=
+comment8.target=java.lang.String\ getFecha()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

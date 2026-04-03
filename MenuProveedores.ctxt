@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MenuProveedores
+comment1.params=
+comment1.target=void\ mostrar()
+comment2.params=
+comment2.target=void\ verProveedores()
+comment3.params=
+comment3.target=void\ agregarProveedor()
+comment4.params=
+comment4.target=void\ modificarProveedor()
+comment5.params=
+comment5.target=void\ eliminarProveedor()
+numComments=6
