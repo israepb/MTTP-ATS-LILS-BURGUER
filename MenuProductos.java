@@ -8,11 +8,13 @@ public class MenuProductos{
             boolean esAdmin=MenuPrincipal.tieneRol(Usuario.ADMIN);
             System.out.println("  1. Ver menu completo");
             System.out.println("  2. Buscar producto por ID");
-            System.out.println("  6. Ver receta de producto");
             if(esAdmin){
                 System.out.println("  3. Agregar producto");
                 System.out.println("  4. Cambiar precio");
                 System.out.println("  5. Activar / Desactivar producto");
+            }
+            System.out.println("  6. Ver receta de producto");
+            if(esAdmin){
                 System.out.println("  7. Crear combo / promocion");
                 System.out.println("  8. Editar receta de producto");
             }
