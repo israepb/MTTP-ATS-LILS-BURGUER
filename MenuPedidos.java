@@ -18,7 +18,7 @@ public class MenuPedidos{
                 System.out.println("  6.  Ver total del pedido");
                 System.out.println("  7.  Cancelar pedido");
             }
-            if(esAdmin || esCajero || !esCocinero){
+            if(esAdmin || esCajero){
                 System.out.println("  8.  Enviar a cocina");
             }
             if(esAdmin || esCocinero){
@@ -29,8 +29,8 @@ public class MenuPedidos{
                 System.out.println("  11. Generar factura");
             }
             System.out.println("  12. Ver historial de pedidos");
-            if(esAdmin || esCajero){
-                System.out.println("  13. Ver tickets emitidos");
+            if(esAdmin || esCajero || esCocinero){
+                System.out.println("  13. Ver tickets de cocina");
             }
             if(esAdmin || esCocinero){
                 System.out.println("  14. Ver receta del pedido");
@@ -40,102 +40,100 @@ public class MenuPedidos{
             int op=Consola.leerEntero("Opcion");
             switch(op){
                 case 1:
-                    if(!esCocinero || esAdmin){ 
-                        nuevoPedido(); 
-                    }else{ 
-                        System.out.println("  Opcion no disponible para su rol."); 
+                    if(!esCocinero || esAdmin){
+                        nuevoPedido();
+                    }else{
+                        System.out.println("  Opcion no disponible para su rol.");
                     }
                     break;
-                case 2:  
-                    verPedido(); 
+                case 2:
+                    verPedido();
                     break;
                 case 3:
-                    if(!esCocinero || esAdmin){ 
-                        agregarProducto(); 
-                    }else{ 
-                        System.out.println("  Opcion no disponible para su rol."); 
+                    if(!esCocinero || esAdmin){
+                        agregarProducto();
+                    }else{
+                        System.out.println("  Opcion no disponible para su rol.");
                     }
                     break;
                 case 4:
-                    if(!esCocinero || esAdmin){ 
-                        modificarCantidad(); 
-                    }else{ 
-                        System.out.println("  Opcion no disponible para su rol."); 
+                    if(!esCocinero || esAdmin){
+                        modificarCantidad();
+                    }else{
+                        System.out.println("  Opcion no disponible para su rol.");
                     }
                     break;
                 case 5:
-                    if(!esCocinero || esAdmin){ 
-                        eliminarProducto(); 
-                    }else{ 
-                        System.out.println("  Opcion no disponible para su rol."); 
+                    if(!esCocinero || esAdmin){
+                        eliminarProducto();
+                    }else{
+                        System.out.println("  Opcion no disponible para su rol.");
                     }
                     break;
                 case 6:
-                    if(!esCocinero || esAdmin){ 
-                        verTotal(); 
-                    }else{ 
+                    if(!esCocinero || esAdmin){
+                        verTotal();
+                    }else{
                         System.out.println("  Opcion no disponible para su rol.");
                     }
                     break;
                 case 7:
-                    if(!esCocinero || esAdmin){ 
+                    if(!esCocinero || esAdmin){
                         cancelarPedido();
-                    }else{ 
-                        System.out.println("  Opcion no disponible para su rol."); 
+                    }else{
+                        System.out.println("  Opcion no disponible para su rol.");
                     }
                     break;
                 case 8:
-                    if(esAdmin || esCajero ){
-                        enviarCocina(); 
-                    }
-                    else{ 
-                        System.out.println("  Requiere sesion de empleado."); 
+                    if(esAdmin || esCajero){
+                        enviarCocina();
+                    }else{
+                        System.out.println("  Requiere rol CAJERO o ADMIN.");
                     }
                     break;
                 case 9:
-                    if(esAdmin || esCocinero){ 
-                        marcarListo(); 
+                    if(esAdmin || esCocinero){
+                        marcarListo();
                     }else{
-                        System.out.println("  Requiere rol COCINERO o ADMIN."); 
+                        System.out.println("  Requiere rol COCINERO o ADMIN.");
                     }
                     break;
                 case 10:
-                    if(esAdmin || esCajero){ 
-                        registrarPago(); 
-                    }
-                    else{ 
-                        System.out.println("  Requiere rol CAJERO o ADMIN."); 
+                    if(esAdmin || esCajero){
+                        registrarPago();
+                    }else{
+                        System.out.println("  Requiere rol CAJERO o ADMIN.");
                     }
                     break;
                 case 11:
-                    if(esAdmin || esCajero){ 
-                        generarFactura(); 
-                    }else{ 
-                        System.out.println("  Requiere rol CAJERO o ADMIN."); 
+                    if(esAdmin || esCajero){
+                        generarFactura();
+                    }else{
+                        System.out.println("  Requiere rol CAJERO o ADMIN.");
                     }
                     break;
-                case 12: 
+                case 12:
                     verHistorial();
                     break;
                 case 13:
-                    if(esAdmin || esCajero){ 
+                    if(esAdmin || esCajero || esCocinero){
                         verTickets();
-                    }else{ 
-                        System.out.println("  Requiere rol CAJERO o ADMIN."); 
+                    }else{
+                        System.out.println("  Requiere sesion de empleado.");
                     }
                     break;
                 case 14:
-                    if(esAdmin || esCocinero){ 
-                        verRecetaPedido(); 
-                    }else{ 
-                        System.out.println("  Requiere rol COCINERO o ADMIN."); 
+                    if(esAdmin || esCocinero){
+                        verRecetaPedido();
+                    }else{
+                        System.out.println("  Requiere rol COCINERO o ADMIN.");
                     }
                     break;
-                case 0: 
-                    activo=false; 
+                case 0:
+                    activo=false;
                     break;
-                default: 
-                    System.out.println("  Opcion no valida."); 
+                default:
+                    System.out.println("  Opcion no valida.");
                     break;
             }
         }
@@ -152,10 +150,10 @@ public class MenuPedidos{
     }
     private static void verPedido(){
         Pedido p =PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
-        }else{ 
-            p.mostrarDetalle(); 
+        if(p==null){
+            System.out.println("  Pedido no encontrado.");
+        }else{
+            p.mostrarDetalle();
         }
         Consola.pausar();
     }
@@ -166,62 +164,86 @@ public class MenuPedidos{
             Consola.pausar(); 
             return; 
         }
-        List<Producto> todos = ProductoDAO.listarTodos();
-        System.out.println("  --- Productos disponibles ---");
-        for(Producto prod : todos){
-            if(prod.estaDisponible()){ 
-                System.out.println(prod);
+        if( p.getEstado().equals(Pedido.PENDIENTE)){
+            List<Producto> todos = ProductoDAO.listarTodos();
+            System.out.println("  --- Productos disponibles ---");
+            for(Producto prod : todos){
+                if(prod.estaDisponible()){ 
+                    System.out.println(prod);
+                }
             }
+            System.out.println();
+            Producto prod =ProductoDAO.buscar(Consola.leerTexto("ID del producto"));
+            if(prod ==null){
+                System.out.println("  Producto no encontrado."); 
+                Consola.pausar(); 
+                return; 
+            }
+            int cant =Consola.leerEntero("Cantidad");
+            if (cant <=0) {
+                System.out.println("  La cantidad debe ser mayor a cero.");
+                Consola.pausar();
+                return;
+            }
+            p.agregarProducto(prod.getIdProducto(),cant,prod.getPrecioFinal());
+            PedidoDAO.guardar(p);
+            System.out.printf("  Agregado: %dx %s  (Bs. %.2f c/u)%n", cant, prod.getNombre(), prod.getPrecioFinal());
+        }else{
+            System.out.println("el pedido esta "+p.getEstado()+" por lo tanto ya no puede ser modificado.");
         }
-        System.out.println();
-        Producto prod =ProductoDAO.buscar(Consola.leerTexto("ID del producto"));
-        if(prod==null){ 
-            System.out.println("  Producto no encontrado."); 
-            Consola.pausar();
-            return; 
-        }
-        int cant =Consola.leerEntero("Cantidad");
-        p.agregarProducto(prod.getIdProducto(),cant,prod.getPrecioFinal());
-        PedidoDAO.guardar(p);
-        System.out.printf("  Agregado: %dx %s  (Bs. %.2f c/u)%n", cant, prod.getNombre(), prod.getPrecioFinal());
         Consola.pausar();
     }
     private static void modificarCantidad(){
         Pedido p=PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){ 
+        if(p ==null){
             System.out.println("  Pedido no encontrado."); 
             Consola.pausar(); 
             return; 
         }
-        p.mostrarDetalle();
-        String idProd= Consola.leerTexto("ID del producto a modificar");
-        int nuevaCant= Consola.leerEntero("Nueva cantidad");
-        for(DetallePedido d : p.getDetalles()){
-            if(d.getIdProducto().equals(idProd)){
-                d.setCantidad(nuevaCant);
-                PedidoDAO.guardar(p);
-                System.out.println("  Cantidad actualizada.");
-                Consola.pausar(); return;
+        if( p.getEstado().equals(Pedido.PENDIENTE)){
+            p.mostrarDetalle();
+            String idProd= Consola.leerTexto("ID del producto a modificar");
+            int nuevaCant= Consola.leerEntero("Nueva cantidad");
+            if (nuevaCant <=0) {
+                System.out.println("  La cantidad debe ser mayor a cero.");
+                Consola.pausar();
+                return;
             }
+            for(DetallePedido d : p.getDetalles()){
+                if(d.getIdProducto().equals(idProd)){
+                    d.setCantidad(nuevaCant);
+                    PedidoDAO.guardar(p);
+                    System.out.println("  Cantidad actualizada.");
+                    Consola.pausar(); 
+                    return;
+                }
+            }
+            System.out.println("  Error: El producto '" + idProd + "' no está en este pedido.");
+            Consola.pausar();
+        }else{
+            System.out.println("el pedido esta "+p.getEstado()+" por lo tanto ya no puede ser modificado.");
         }
-        System.out.println("  Producto no encontrado en el pedido.");
         Consola.pausar();
     }
     private static void eliminarProducto(){
         Pedido p=PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
-            Consola.pausar(); 
-            return; 
+        if(p==null){
+            System.out.println("  Pedido no encontrado.");
+            Consola.pausar();
+            return;
         }
-        p.mostrarDetalle();
-        p.eliminarProducto(Consola.leerTexto("ID del producto a eliminar"));
-        PedidoDAO.guardar(p);
+        if( p.getEstado().equals(Pedido.PENDIENTE)){
+            p.mostrarDetalle();
+            p.eliminarProducto(Consola.leerTexto("ID del producto a eliminar"));
+            PedidoDAO.guardar(p);
+        }else{
+            System.out.println("el pedido esta "+p.getEstado()+" por lo tanto ya no puede ser modificado.");
+        }
         Consola.pausar();
     }
     private static void verTotal(){
         Pedido p=PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){
+        if(p ==null){
             System.out.println("  Pedido no encontrado."); 
             Consola.pausar(); 
             return; 
@@ -232,10 +254,15 @@ public class MenuPedidos{
     private static void cancelarPedido(){
         String id=Consola.leerTexto("ID del pedido");
         Pedido p= PedidoDAO.buscar(id);
-        if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
+        if(p==null){
+            System.out.println("  Pedido no encontrado.");
+            Consola.pausar();
+            return;
+        }
+        if(p.getEstado().equals(Pedido.ENTREGADO)){
+            System.out.println("  No se puede cancelar un pedido que ya ha sido pagado y entregado.");
             Consola.pausar(); 
-            return; 
+            return;
         }
         if(Consola.confirmar("Cancelar "+id+"?")){
             p.setEstado(Pedido.CANCELADO);
@@ -246,104 +273,120 @@ public class MenuPedidos{
     }
     private static void enviarCocina(){
         Pedido p=PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){ 
+        if(p ==null){
             System.out.println("  Pedido no encontrado."); 
             Consola.pausar(); 
             return; 
         }
-        p.setEstado(Pedido.EN_PREPARACION);
-        PedidoDAO.guardar(p);
-        System.out.println("  Pedido " +p.getIdPedido()+" enviado a cocina.");
+        if(p.getEstado().equals(Pedido.PENDIENTE)){
+            p.setEstado(Pedido.EN_PREPARACION);
+            PedidoDAO.guardar(p);
+            System.out.println("  Pedido " +p.getIdPedido()+" enviado a cocina.");
+        }else{
+            System.out.println("el pedido esta "+p.getEstado()+", necesita estar PENDIENTE para marcar esta opción.");
+        }
         Consola.pausar();
     }
     private static void marcarListo(){
         Pedido p=PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
         if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
-            Consola.pausar(); 
-            return;
+                System.out.println("  Pedido no encontrado."); 
+                Consola.pausar(); 
+                return;
+            }
+        if(p.getEstado().equals(Pedido.EN_PREPARACION)){
+            p.setEstado(Pedido.LISTO);
+            PedidoDAO.guardar(p);
+            System.out.println("  Pedido " + p.getIdPedido() + " listo para entregar.");
+        }else{
+            System.out.println("el pedido esta "+p.getEstado()+", necesita estar EN_PREPARACION para marcar esta opción.");
         }
-        p.setEstado(Pedido.LISTO);
-        PedidoDAO.guardar(p);
-        System.out.println("  Pedido " + p.getIdPedido() + " listo para entregar.");
         Consola.pausar();
     }
     private static void registrarPago(){
         Pedido p= PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
         if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
-            Consola.pausar(); 
-            return; 
-        }
+                System.out.println("  Pedido no encontrado."); 
+                Consola.pausar(); 
+                return;
+            }
         if(p.getEstado().equals(Pedido.ENTREGADO)){
             System.out.println("  Este pedido ya fue pagado y entregado.");
             Consola.pausar();
             return;
-        }
-        if(p.getEstado().equals(Pedido.CANCELADO)){
+        }else if(p.getEstado().equals(Pedido.CANCELADO)){
             System.out.println("  No se puede cobrar un pedido cancelado.");
             Consola.pausar();
             return;
+        }else if(p.getEstado().equals(Pedido.LISTO)){
+            System.out.printf("  Total a cobrar: Bs. %.2f | Metodo: Efectivo%n", p.calcularTotal());
+            if(!Consola.confirmar("Confirmar pago?")){ 
+                Consola.pausar(); 
+                return; 
+            }
+            Pago pago = new Pago(PagoDAO.siguienteIdPago(),p.calcularTotal(),p.getIdPedido());
+            PagoDAO.guardarPago(pago);
+            pago.imprimirComprobante();
+            Ticket ticket = new Ticket(PagoDAO.siguienteIdTicket(),p.getIdPedido(),p.calcularTotal());
+            PagoDAO.guardarTicket(ticket);
+            ticket.imprimir();
+            p.setEstado(Pedido.ENTREGADO);
+            PedidoDAO.guardar(p);
+        }else{
+            System.out.println("el pedido esta "+p.getEstado()+", necesita estar LISTO para marcar esta opción.");
         }
-        System.out.printf("  Total a cobrar: Bs. %.2f | Metodo: Efectivo%n", p.calcularTotal());
-        if(!Consola.confirmar("Confirmar pago?")){ 
-            Consola.pausar(); 
-            return; 
-        }
-        Pago pago = new Pago(PagoDAO.siguienteIdPago(),p.calcularTotal(),p.getIdPedido());
-        PagoDAO.guardarPago(pago);
-        pago.imprimirComprobante();
-        Ticket ticket = new Ticket(PagoDAO.siguienteIdTicket(),p.getIdPedido(),p.calcularTotal());
-        PagoDAO.guardarTicket(ticket);
-        ticket.imprimir();
-        p.setEstado(Pedido.ENTREGADO);
-        PedidoDAO.guardar(p);
         Consola.pausar();
     }
     private static void generarFactura(){
         Pedido p=PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
-            Consola.pausar(); 
+        if(p==null){
+            System.out.println("  Pedido no encontrado.");
+            Consola.pausar();
             return;
         }
-        String nit=Consola.leerTexto("NIT del cliente");
-        String rs=Consola.leerTexto("Razon social");
-        Factura f=new Factura(PagoDAO.siguienteIdFactura(),nit,rs,p.calcularTotal(),p.getIdPedido());
-        PagoDAO.guardarFactura(f);
-        f.imprimir();
+        if(p.getEstado().equals(Pedido.ENTREGADO)){
+            String nit=Consola.leerTexto("NIT del cliente");
+            String rs=Consola.leerTexto("Razon social");
+            Factura f=new Factura(PagoDAO.siguienteIdFactura(),nit,rs,p.calcularTotal(),p.getIdPedido());
+            PagoDAO.guardarFactura(f);
+            f.imprimir();
+        }
+        else{
+            System.out.println("el pedido esta "+p.getEstado()+", necesita estar ENTREGADO para marcar esta opción.");
+        }
         Consola.pausar();
     }
     private static void verHistorial(){
         Consola.titulo("HISTORIAL DE PEDIDOS");
         List<Pedido> lista = PedidoDAO.listarTodos();
-        if(lista.isEmpty()){ 
+        if(lista.isEmpty()){
             System.out.println("  Sin pedidos registrados.");
-        }else{ 
-            for(Pedido p : lista){ 
+        }else{
+            for(Pedido p : lista){
                 System.out.println(p);
             }
         }
         Consola.pausar();
     }
     private static void verTickets(){
-        Consola.titulo("TICKETS EMITIDOS");
-        List<Ticket> lista = PagoDAO.listarTickets();
-        if(lista.isEmpty()){ 
+       Consola.titulo("TICKETS DE COCINA");
+       List<Ticket> lista = PagoDAO.listarTickets();
+        if(lista.isEmpty()){
             System.out.println("  Sin tickets emitidos.");
-        }else{
-            for(int i=lista.size()-1; i>=0; i--){ 
-                System.out.println(lista.get(i)); 
+       }else{
+            for(Ticket t : lista){
+                t.imprimir();
+                System.out.println();
             }
-        }
-        Consola.pausar();
+       }
+       Consola.pausar();
     }
     private static void verRecetaPedido(){
         Pedido p= PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
-        if(p==null){ 
-            System.out.println("  Pedido no encontrado."); 
-            Consola.pausar(); 
-            return; 
+        if(p==null){
+            System.out.println("  Pedido no encontrado.");
+            Consola.pausar();
+            return;
         }
         Consola.titulo("RECETA DEL PEDIDO " + p.getIdPedido());
         System.out.println("  Cliente : " + p.getIdCliente());
@@ -352,7 +395,7 @@ public class MenuPedidos{
         boolean hayReceta = false;
         for(DetallePedido det : p.getDetalles()){
             Producto prod = ProductoDAO.buscar(det.getIdProducto());
-            if(prod==null){ 
+            if(prod==null){
                 continue;
             }
             System.out.println("  >> "+det.getCantidad()+"x "+prod.getNombre());
@@ -387,7 +430,6 @@ public class MenuPedidos{
         }
         if(!hayReceta){
             System.out.println("  Ninguno de los productos tiene receta registrada.");
-            //System.out.println("  El ADMIN puede agregarlas en Productos > Opcion 8.");
         }
         Consola.pausar();
     }
