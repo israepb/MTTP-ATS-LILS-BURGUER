@@ -5,5 +5,5 @@ U004|Carlos|Ramirez|70044444|carlos|cocina123|COCINERO|true
 U005|pepe|gonzales|987654|PepeGonzales|1234|COCINERO|true
 U006|tito|Lara|9687474|titoLara|12314234|CAJERO|true
 U007|joel|Gonzales|8574983|JoelGonza|23411342|CLIENTE|true
-U008|ivan|gomez|8653|ivanGomez|1236547'|COCINERO|true
+U008|ivan|gomez|8653|ivanGomez|1236547'|COCINERO|false
 U009|alan|perz|2542663|juan[pe|5426261621|COCINERO|true

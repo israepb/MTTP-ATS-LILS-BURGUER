@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 public class PagoDAO{
-    private static final String AP = "pagos.txt"; //AP=AlmacenPagos
-    private static final String AF = "facturas.txt"; //AF=AlmacenFacturas
-    private static final String AT = "tickets.txt"; //AT=AlmacenTickes
+    private static final String AP = "pagos.txt";
+    private static final String AF = "facturas.txt";
+    private static final String AT = "tickets.txt";
     public static List<Pago> listarPagos(){
         List<Pago> lista = new ArrayList<Pago>();
         for(String l : ArchivoUtil.leerLineas(AP)){
@@ -42,8 +42,7 @@ public class PagoDAO{
         return lista;
     }
     public static void guardarFactura(Factura f){
-        ArchivoUtil.agregarLinea(AF, f.getIdFactura() + "|" + f.getNit() + "|" + f.getRazonSocial() + "|" + f.getTotal() + "|" + f.getIdPedido() + "|" 
-        + f.getFecha());
+        ArchivoUtil.agregarLinea(AF, f.getIdFactura() + "|" + f.getNit() + "|" + f.getRazonSocial() + "|" + f.getTotal() + "|" + f.getIdPedido() + "|" + f.getFecha());
     }
     public static String siguienteIdFactura(){
         return "FAC-" + (ArchivoUtil.leerLineas(AF).size() + 1);
@@ -51,16 +50,22 @@ public class PagoDAO{
     public static List<Ticket> listarTickets(){
         List<Ticket> lista=new ArrayList<Ticket>();
         for(String l : ArchivoUtil.leerLineas(AT)){
-            String[] p=l.split("\\|");
-            if(p.length<3){
+            String[] p=l.split("\\|", 6);
+            if(p.length<4){
                 continue;
             }
-            lista.add(new Ticket(p[0], p[1], Double.parseDouble(p[2])));
+            if(p.length >= 6){
+                lista.add(new Ticket(p[0], p[1], p[2], Double.parseDouble(p[3]), p[4], p[5]));
+            }else if(p.length == 5){
+                lista.add(new Ticket(p[0], p[1], p[2], Double.parseDouble(p[3]), p[4], ""));
+            }else{
+                lista.add(new Ticket(p[0], p[1], Double.parseDouble(p[2])));
+            }
         }
         return lista;
     }
     public static void guardarTicket(Ticket t){
-        ArchivoUtil.agregarLinea(AT, t.getIdTicket() + "|" + t.getIdPedido() + "|" + t.getTotal() + "|" + t.getFecha());
+        ArchivoUtil.agregarLinea(AT, t.getIdTicket() + "|" + t.getIdPedido() + "|" + t.getCliente() + "|" + t.getTotal() + "|" + t.getFecha() + "|" + t.getDetallePedido());
     }
     public static String siguienteIdTicket(){
         return "TKT-" + (ArchivoUtil.leerLineas(AT).size() + 1);

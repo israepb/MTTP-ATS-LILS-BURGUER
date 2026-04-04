@@ -110,8 +110,8 @@ public class MenuPrincipal{
             encabezado();
             System.out.println("  --- PANEL COCINERO ---");
             System.out.println("  1. Ver Productos y Menu");
-            System.out.println("  2. Inventario");
-            System.out.println("  3. Gestionar pedido");
+            System.out.println("  2. Pedidos - Cocina");
+            System.out.println("  3. Inventario");
             System.out.println("  0. Cerrar sesion");
             Consola.linea();
             int op=Consola.leerEntero("Opcion");
@@ -120,10 +120,10 @@ public class MenuPrincipal{
                     MenuProductos.mostrar();  
                     break;
                 case 2: 
-                    MenuInventario.mostrar(); 
+                    MenuPedidos.mostrar();
                     break;
                 case 3: 
-                    MenuPedidos.mostrar(); 
+                    MenuInventario.mostrar(); 
                     break;
                 case 0: 
                     ejecutando = cerrarSesion(); 

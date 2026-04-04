@@ -8,4 +8,3 @@ I007|Harina pizza|kg|4.0
 I008|Salsa de tomate|lt|3.0
 I009|Papas|kg|8.0
 I010|Huevo|unid|30.0
-I011|||1.0
