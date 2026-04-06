@@ -203,6 +203,18 @@ public class MenuPedidos{
         if( p.getEstado().equals(Pedido.PENDIENTE)){
             p.mostrarDetalle();
             String idProd= Consola.leerTexto("ID del producto a modificar");
+            boolean existeEnPedido = false;
+            for(DetallePedido d : p.getDetalles()){
+                if(d.getIdProducto().equals(idProd)){
+                    existeEnPedido = true;
+                    break;
+                }
+            }
+            if(!existeEnPedido){
+                System.out.println("  Error: El producto '" + idProd + "' no está en este pedido.");
+                Consola.pausar();
+                return; 
+            }
             int nuevaCant= Consola.leerEntero("Nueva cantidad");
             if (nuevaCant <=0) {
                 System.out.println("  La cantidad debe ser mayor a cero.");
@@ -370,16 +382,22 @@ public class MenuPedidos{
     }
     private static void verTickets(){
        Consola.titulo("TICKETS DE COCINA");
-       List<Ticket> lista = PagoDAO.listarTickets();
-        if(lista.isEmpty()){
-            System.out.println("  Sin tickets emitidos.");
-       }else{
-            for(Ticket t : lista){
-                t.imprimir();
-                System.out.println();
+       List<Pedido> lista = PedidoDAO.listarTodos();
+       int pedidosEncontrados = 0;
+       if(lista.isEmpty()){
+        System.out.println("  No hay historial de pedidos en el sistema.");
+        } else {
+            for(Pedido p : lista){
+                if(p.getEstado().equals(Pedido.EN_PREPARACION)){
+                    System.out.println("  [TICKET] " + p); 
+                    pedidosEncontrados++;
+                }
             }
-       }
-       Consola.pausar();
+            if(pedidosEncontrados == 0){
+                System.out.println("  No hay pedidos en preparación actualmente.");
+            }
+        }
+        Consola.pausar();
     }
     private static void verRecetaPedido(){
         Pedido p= PedidoDAO.buscar(Consola.leerTexto("ID del pedido"));
